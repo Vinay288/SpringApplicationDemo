@@ -27,4 +27,8 @@ public class HelloRestController {
 		return "welcome to the world of " + fname + " " + lname;
 	}
 
+	@GetMapping("/param/{name}")
+	public String parameterName(@PathVariable String name) {
+		return "Hi " + name;
+	}
 }
