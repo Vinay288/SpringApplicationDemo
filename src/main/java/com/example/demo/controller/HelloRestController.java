@@ -21,4 +21,10 @@ public class HelloRestController {
 		return new ResponseEntity<String>("Hello world!", HttpStatus.OK);
 	}
 
+	@RequestMapping(value = { "/query" })
+	public String sayHi(@RequestParam(value = "fname", defaultValue = "vinay") String fname,
+			@RequestParam(value = "lname", defaultValue = "Hiremath") String lname) {
+		return "welcome to the world of " + fname + " " + lname;
+	}
+
 }
