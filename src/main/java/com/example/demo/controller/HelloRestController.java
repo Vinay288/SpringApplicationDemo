@@ -31,4 +31,9 @@ public class HelloRestController {
 	public String parameterName(@PathVariable String name) {
 		return "Hi " + name;
 	}
+
+	@PostMapping("/post")
+	public String setUser(@RequestBody User user) {
+		return "Hello " + user.getFirstName() + " " + user.getLastName();
+	}
 }
