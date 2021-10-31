@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,5 +36,9 @@ public class HelloRestController {
 	@PostMapping("/post")
 	public String setUser(@RequestBody User user) {
 		return "Hello " + user.getFirstName() + " " + user.getLastName();
+	}
+	@PostMapping("/put/{firstName}")
+	public String sayHelloPutMethod(@PathVariable String firstName,@RequestParam(value="lastName",defaultValue="Hiremath") String lastName) {
+		return "Hello "+firstName+" "+lastName;
 	}
 }
